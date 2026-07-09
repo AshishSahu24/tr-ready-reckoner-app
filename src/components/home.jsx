@@ -20,7 +20,6 @@ export default function Home() {
   const navigate = useNavigate();
   const [bgIndex, setBgIndex] = useState(0);
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [hoveredCard, setHoveredCard] = useState(null);
   const [hoveredCalc, setHoveredCalc] = useState(null);
 
   // Smooth Carousel Clock
@@ -184,75 +183,6 @@ export default function Home() {
                     </span>
                   </div>
                 </button>
-              );
-            })}
-          </div>
-        </section>
-
-        {/* SECTION CATEGORY MATRIX */}
-        <section className="w-full space-y-4">
-          <div className="text-center sm:text-left pl-1">
-            <h2 className="text-xs font-black tracking-widest text-slate-400 uppercase">Personnels</h2>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {[
-              {
-                id: 0,
-                page: '/pbor-td',
-                title: 'PBOR',
-                desc: 'Sailors & Personnel Below Officer Rank Guidelines',
-                icon: <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-              },
-              {
-                id: 1,
-                page: '/officers-td',
-                title: 'Officers',
-                desc: 'Commissioned Officer Ranks Statutory Regulations',
-                icon: <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-              },
-              {
-                id: 2,
-                page: '/civilians-td',
-                title: 'Defence Civilian',
-                desc: 'Civilian Cadres, Specialized Staff & Attached Units',
-                icon: <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2-2V16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-              }
-            ].map((card) => {
-              const isHovered = hoveredCard === card.id;
-              return (
-                <div 
-                  key={card.page}
-                  onClick={() => navigate(card.page)}
-                  onMouseEnter={() => setHoveredCard(card.id)}
-                  onMouseLeave={() => setHoveredCard(null)}
-                  className="group relative p-6 rounded-xl border border-blue-900/60 transition-all duration-300 ease-out cursor-pointer hover:-translate-y-1 shadow-xl flex flex-col justify-between backdrop-blur-xl overflow-hidden min-h-[140px]"
-                  style={{
-                    background: isHovered 
-                      ? 'linear-gradient(180deg, rgba(15,23,42,0.8) 0%, rgba(30,41,59,0.9) 100%)' 
-                      : 'linear-gradient(180deg, rgba(15,23,42,0.4) 0%, rgba(15,23,42,0.85) 100%)',
-                    borderColor: isHovered ? '#fbbf24' : 'rgba(30,58,138,0.6)'
-                  }}
-                >
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600/[0.02] to-transparent group-hover:from-amber-500/[0.04] transition-all duration-500" />
-                  
-                  <div className="flex items-start gap-4 z-10">
-                    <div className="w-12 h-12 shrink-0 flex items-center justify-center rounded-lg bg-blue-950 border border-blue-800 group-hover:border-amber-400/40 shadow-inner text-amber-400 transition-colors">
-                      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                        {card.icon}
-                      </svg>
-                    </div>
-                    <div className="text-left space-y-1">
-                      <div className="text-base font-black tracking-wider text-slate-100 group-hover:text-amber-400 transition-colors uppercase">{card.title}</div>
-                      <p className="text-xs text-slate-400 group-hover:text-slate-200 transition-colors leading-normal">{card.desc}</p>
-                    </div>
-                  </div>
-
-                  <div className="w-full flex justify-end items-center pt-2 text-slate-500 group-hover:text-amber-400 transition-colors transform group-hover:translate-x-1 duration-300 z-10">
-                    <span className="text-[10px] font-black tracking-widest uppercase mr-1 opacity-0 group-hover:opacity-100 transition-opacity">View Documentation</span>
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
-                  </div>
-                </div>
               );
             })}
           </div>

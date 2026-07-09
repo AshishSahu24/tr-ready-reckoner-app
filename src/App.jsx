@@ -59,11 +59,6 @@ export default function App() {
         <footer className="relative z-10 bg-slate-950 text-slate-300 py-8 border-t border-slate-900 shadow-inner">
           <div className="w-full max-w-[1600px] mx-auto px-6 md:px-8 flex flex-col items-center text-center space-y-5">
 
-            {/* Secure System Update Variable Line */}
-            <div className="text-xs sm:text-sm text-slate-500 font-mono tracking-wide font-semibold">
-              Page last updated on : <span className="text-slate-400 font-bold">12/06/2026</span>
-            </div>
-
             {/* Development Unit Credit Box Badge */}
             <div className="pt-3 border-t border-slate-900 w-full max-w-xl flex justify-center">
               <div className="inline-flex items-center gap-3 bg-slate-900/80 border border-slate-800/60 px-5 py-2 rounded-2xl text-slate-400 text-xs sm:text-sm font-bold">
