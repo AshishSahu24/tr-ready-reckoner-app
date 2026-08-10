@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
+import RMATable from './RMA'; 
 
 export default function OfficerPMT() {
+  const [showRMA, setShowRMA] = useState(false);
+
   return (
     <div className="space-y-8 animate-in fade-in duration-300 w-full text-slate-800">
       
@@ -136,6 +139,39 @@ export default function OfficerPMT() {
                 <p>• <strong>Own Car / Taxi Transit:</strong> ₹24 per Kilometer traveled.</p>
                 <p>• <strong>Auto-Rickshaw / Scooter:</strong> ₹12 per Kilometer traveled.</p>
               </div>
+
+              {/* STICKY RMA BUTTON BLOCK */}
+              <div className={`mt-4 p-4 rounded-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 transition-all duration-300 ${
+                showRMA 
+                  ? 'sticky top-4 z-20 bg-indigo-100/95 backdrop-blur-md border border-indigo-300 shadow-[0_10px_25px_-5px_rgba(79,70,229,0.2)]' 
+                  : 'bg-indigo-50/60 border border-indigo-100'
+              }`}>
+                <div>
+                  <h4 className="font-bold text-indigo-900 text-xs flex items-center gap-1.5">
+                    <svg className="w-4 h-4 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    Official RMA Clarifications
+                  </h4>
+                  <p className="text-[11px] text-slate-600 mt-1">View the detailed entitlement conditions for Road Mileage Allowance based on DG (OL&SM) guidelines.</p>
+                </div>
+                
+                {/* Toggle Button */}
+                <button 
+                  onClick={() => setShowRMA(!showRMA)}
+                  className="whitespace-nowrap px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-[11px] uppercase tracking-wider font-bold rounded shadow-md transition-colors"
+                >
+                  {showRMA ? 'Hide Clarification Table' : 'View Clarification Table'}
+                </button>
+              </div>
+
+              {/* Conditionally Render the Component here */}
+              {showRMA && (
+                <div className="mt-6 border border-indigo-200 rounded-2xl overflow-hidden shadow-lg animate-in fade-in slide-in-from-top-4 duration-500">
+                  <RMATable />
+                </div>
+              )}
+
             </div>
           </details>
 
