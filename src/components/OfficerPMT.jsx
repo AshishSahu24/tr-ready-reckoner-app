@@ -276,6 +276,30 @@ export default function OfficerPMT() {
           </div>
         </div>
       </section>
+      {/* TIME LIMIT FOR CLAIMS SUBMISSION (PERMANENT DUTY) */}
+      <section className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+        <div className="p-4 bg-slate-50 border-b border-slate-200">
+          <h3 className="text-sm font-bold text-slate-800 uppercase tracking-wider flex items-center gap-2">
+            ⏱️ Time Limit to Submit Claims
+          </h3>
+        </div>
+        
+        <div className="p-4 text-xs space-y-4 leading-relaxed text-slate-600">
+          <div className="bg-slate-50 p-4 rounded-xl border border-slate-200/60 space-y-2">
+            <span className="font-bold text-blue-900 uppercase tracking-wide text-[11px] block">
+              Permanent Duty (TA/DA)
+            </span>
+            <p>Claims must be submitted within <span className="font-bold text-slate-900 bg-blue-100 px-1.5 py-0.5 rounded">60 days</span> from the date of completion of the journey.</p>
+            <p className="text-[10px] text-slate-500 italic font-normal">* This time limit applies uniformly whether a travel advance was drawn or not.</p>
+          </div>
+
+          <div className="bg-amber-50 p-4 rounded-xl border border-amber-200 text-slate-700 text-xs space-y-1.5 leading-relaxed shadow-inner">
+            <p>
+              <strong className="text-amber-900">Important Audit Note:</strong> For the purpose of calculating the time limit, the "completion of journey" shall be officially reckoned as the <span className="font-bold underline decoration-amber-400">date of physical reporting</span> of the personnel to the new unit.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* REQUIRED DOCUMENTS CHECKLIST */}
       <div className="border border-blue-200 bg-blue-50/40 rounded-2xl p-5 shadow-inner">
