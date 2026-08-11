@@ -195,7 +195,40 @@ export default function OfficerLTC() {
           </ul>
         </div>
       </section>
+      {/* TIME LIMIT FOR CLAIMS SUBMISSION (LTC) */}
+      <section className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+        <div className="p-4 bg-slate-50 border-b border-slate-200">
+          <h3 className="text-sm font-bold text-slate-800 uppercase tracking-wider flex items-center gap-2">
+            ⏱️ Time Limit to Submit Claims
+          </h3>
+        </div>
+        
+        <div className="p-4 text-xs space-y-4 leading-relaxed text-slate-600">
+          <div className="bg-slate-50 p-4 rounded-xl border border-slate-200/60 space-y-3">
+            <span className="font-bold text-indigo-900 uppercase tracking-wide text-[11px] block border-b border-slate-200 pb-2">
+              Leave Travel Concession (LTC)
+            </span>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-1">
+              <div className="bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
+                <strong className="text-slate-800 block mb-1">If Advance Drawn:</strong>
+                Claim must be submitted within <span className="font-bold text-indigo-700 bg-indigo-50 px-1.5 py-0.5 rounded">1 month</span> of completion of the return journey.
+              </div>
+              
+              <div className="bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
+                <strong className="text-slate-800 block mb-1">If No Advance Drawn:</strong>
+                Claim must be submitted within <span className="font-bold text-indigo-700 bg-indigo-50 px-1.5 py-0.5 rounded">3 months</span> of completion of the return journey.
+              </div>
+            </div>
+          </div>
 
+          <div className="bg-amber-50 p-4 rounded-xl border border-amber-200 text-slate-700 text-xs space-y-1.5 leading-relaxed shadow-inner">
+            <p>
+              <strong className="text-amber-900">Important Audit Note:</strong> For the purpose of calculating the time limit, the "completion of journey" shall be officially reckoned as the <span className="font-bold underline decoration-amber-400">date of physical reporting</span> of the personnel back to the unit after leave.
+            </p>
+          </div>
+        </div>
+      </section>
       {/* CORE AUDIT RULES ACCORDION DECKS */}
       <section className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
         <div className="p-4 bg-slate-50 border-b border-slate-200">

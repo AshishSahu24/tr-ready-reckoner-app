@@ -122,6 +122,7 @@ export default function OfficersTD() {
                   </tbody>
                 </table>
               </div>
+              
               <div className="bg-slate-100 border border-slate-200 p-4 rounded-xl grid grid-cols-1 md:grid-cols-2 gap-4 text-slate-700 shadow-inner">
                 <div>
                   <p className="font-bold text-blue-900 uppercase tracking-wider text-[10px]">Fixed Baseline Rates (Unprescribed Localities):</p>
@@ -131,12 +132,37 @@ export default function OfficersTD() {
                     <li><strong>Journey on Foot:</strong> +₹12 per Km (Rises by 25% if baseline DA scales up 50%).</li>
                   </ul>
                 </div>
-                <div className="border-l border-slate-300 pl-4 space-y-1 text-slate-600">
+                <div className="md:border-l border-slate-300 md:pl-4 space-y-1 text-slate-600 pt-4 md:pt-0 border-t md:border-t-0">
                   <p className="font-semibold text-slate-900">Outstation Car Hire Frameworks:</p>
                   <p>1. <strong>Pay Level 14+:</strong> Entitled to AC Taxi mileage claims. Provisioned via STO/CO channels.</p>
                   <p>2. <strong>Extensive Travel:</strong> Hired transport will be provisioned through STO/CO IN establishment if government vehicles are unavailable.</p>
                 </div>
               </div>
+
+              {/* NEW TEMPORARY DUTY MOVES BLOCK */}
+              <div className="bg-blue-50/50 border border-blue-200 rounded-xl p-4 shadow-sm mt-4">
+                <h4 className="font-bold text-blue-900 text-[11px] uppercase tracking-wider mb-3 flex items-center gap-1.5">
+                  <svg className="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  Temporary Duty Moves (Ser J)
+                </h4>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div className="md:col-span-1">
+                    <p className="font-semibold text-slate-800 mb-1">Scenario</p>
+                    <p className="text-slate-600">For journey performed by motor car on Ty duty between places connected by rail.</p>
+                  </div>
+                  <div className="md:col-span-1 border-t md:border-t-0 md:border-l border-blue-200/60 pt-3 md:pt-0 md:pl-4">
+                    <p className="font-semibold text-slate-800 mb-1">Entitlement</p>
+                    <p className="text-slate-600">Road Mileage Allowance</p>
+                  </div>
+                  <div className="md:col-span-1 bg-amber-50 p-3 rounded-lg border border-amber-200/60 text-amber-900">
+                    <p className="font-bold mb-1 border-b border-amber-200/80 pb-1">Sanction of the Competent Authority - Mandatory</p>
+                    <p className="text-[11px] mt-1.5 leading-relaxed">Competent Authority is to decide whether full Road Mileage Allowance is to be allowed or limited to entitled rail fare on the principle <span className="italic font-medium">"whether any public interest was served by performing road journey"</span>.</p>
+                  </div>
+                </div>
+              </div>
+              
             </div>
           </details>
 
@@ -240,6 +266,31 @@ export default function OfficersTD() {
               </tr>
             </tbody>
           </table>
+        </div>
+      </section>
+      
+      {/* TIME LIMIT FOR CLAIMS SUBMISSION (TEMPORARY DUTY) */}
+      <section className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+        <div className="p-4 bg-slate-50 border-b border-slate-200">
+          <h3 className="text-sm font-bold text-slate-800 uppercase tracking-wider flex items-center gap-2">
+            ⏱️ Time Limit to Submit Claims
+          </h3>
+        </div>
+        
+        <div className="p-4 text-xs space-y-4 leading-relaxed text-slate-600">
+          <div className="bg-slate-50 p-4 rounded-xl border border-slate-200/60 space-y-2">
+            <span className="font-bold text-emerald-900 uppercase tracking-wide text-[11px] block">
+              Temporary Duty (TA/DA)
+            </span>
+            <p>Claims must be submitted within <span className="font-bold text-slate-900 bg-emerald-100 px-1.5 py-0.5 rounded">60 days</span> from the date of completion of the journey.</p>
+            <p className="text-[10px] text-slate-500 italic font-normal">* This time limit applies uniformly whether a travel advance was drawn or not.</p>
+          </div>
+
+          <div className="bg-amber-50 p-4 rounded-xl border border-amber-200 text-slate-700 text-xs space-y-1.5 leading-relaxed shadow-inner">
+            <p>
+              <strong className="text-amber-900">Important Audit Note:</strong> For the purpose of calculating the time limit, the "completion of journey" shall be officially reckoned as the <span className="font-bold underline decoration-amber-400">date of physical reporting</span> of the personnel back to their parent unit.
+            </p>
+          </div>
         </div>
       </section>
 
